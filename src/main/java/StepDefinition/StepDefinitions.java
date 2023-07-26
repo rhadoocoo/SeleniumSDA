@@ -60,6 +60,20 @@ public class StepDefinitions {
 
         @And ("Confirm ca am dat dubluclick")
         public void confirmDubluClick(){
+            metode.confirmDubluClick();
+        }
 
+        @And("Opresc alerta")
+        public void oprescAlerta(){
+            metode.oprescAlerta();
+        }
+
+        @And("Dau click pe Ok in alerta aparuta")
+        public void acceptAlerta(){
+            metode.alertaAccept();
+        }
+        @And("Dau click pe Cancel in alerta aparuta")
+        public void dismissAlerta(){
+            metode.alertaDismiss();
         }
 }

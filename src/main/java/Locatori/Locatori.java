@@ -2,7 +2,7 @@ package Locatori;
 
 import org.openqa.selenium.By;
 
-public class Locatori {
+public class Locatori  {
     public By numeButon(String buttonName){
        switch(buttonName) {
            case "Accepta":
@@ -15,6 +15,12 @@ public class Locatori {
                return By.xpath("//*[@id=\"double-click\"]");
            case "QAPractice-Button-Doubleclick-action":
                return By.xpath("//*[@id=\"double-click-btn\"]");
+           case "QAPractice-Alerts":
+               return By.xpath("//*[@id=\"alerts\"]");
+           case "QAPractice-Alert":
+               return By.xpath("//*[@id=\"alert-btn\"]");
+           case "QAPractice-Confirm":
+               return By.xpath("//*[@id=\"confirm-btn\"]");
            default:
                 throw new IllegalArgumentException("Butonul nu exista");
 
