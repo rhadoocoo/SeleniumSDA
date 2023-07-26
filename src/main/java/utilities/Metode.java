@@ -71,7 +71,28 @@ public class Metode {
     public void alertaAccept(){
         Alert alert=driver.switchTo().alert();
         alert.accept();
+    }
+
+    public void selectezFisierul() {
+        WebElement inputFile= driver.findElement(By.id("file_upload"));
+        String filePath = "D:\\Exemplu.txt";
+        inputFile.sendKeys(filePath);
 
     }
+
+    public void submit(String numeButon) {
+        By buttonLocator = locatori.numeButon(numeButon);
+        WebElement element = driver.findElement(buttonLocator);
+        element.submit();
+    }
+
+    public void confirmareUpload(){
+        String expectedText = "You have successfully uploaded \"Exemplu.txt\"";
+        String actualText = driver.findElement(By.id("file_upload_response")).getText();
+        if (!expectedText.equals(actualText)) throw new AssertionError("Nu s-a realizat upload");
+    }
+
+
+
 
 }

@@ -76,4 +76,19 @@ public class StepDefinitions {
         public void dismissAlerta(){
             metode.alertaDismiss();
         }
+        @And("Selectez fisierul pe care vreau sa il uploadez")
+        public void selectezFisierul(){
+            metode.selectezFisierul();
+        }
+        @And("Trimit apasand pe butonul {string}")
+        public void submitFile(String numeButon){
+            metode.apasButonul(numeButon);
+        }
+        @And("Primesc confirmare ca fisierul s-a uploadat cu succes")
+        public void confirmareUpload(){
+            metode.confirmareUpload();
+        }
+
+
+
 }

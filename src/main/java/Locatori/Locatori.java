@@ -21,6 +21,12 @@ public class Locatori  {
                return By.xpath("//*[@id=\"alert-btn\"]");
            case "QAPractice-Confirm":
                return By.xpath("//*[@id=\"confirm-btn\"]");
+           case "QAPractice-Button-File Upload":
+               return By.id("file-upload-item");
+           case "QAPractice-Button-Choose file":
+               return By.id("file_upload");
+           case "QAPractice-Button-Submit":
+               return By.xpath("//*[@id=\"content\"]/div[1]/div/button");
            default:
                 throw new IllegalArgumentException("Butonul nu exista");
 
