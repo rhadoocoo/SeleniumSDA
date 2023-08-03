@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import utilities.ChromeConfig;
 import utilities.Metode;
@@ -13,8 +14,6 @@ import utilities.Metode;
 public class StepDefinitions {
         ChromeDriver driver ;
         Metode metode;
-
-
 
         @Given("Deschid browserul")
         public void utilizatorulDeschidePagina()
@@ -28,7 +27,6 @@ public class StepDefinitions {
         {
         driver.get(url);
         }
-
 
         @Then("Pagina {string} este afisata corect")
         public void paginaAfisataCorect(String expectedUrl)
@@ -44,8 +42,8 @@ public class StepDefinitions {
         }
 
         @And("Apas butonul {string}")
-                public void apasButonul(String numeButon){
-        metode.apasButonul(numeButon);
+        public void apasButonul(String numeButon){
+        metode.pushButton(numeButon);
         }
 
         @And("Astept {int} secunde")
@@ -82,13 +80,27 @@ public class StepDefinitions {
         }
         @And("Trimit apasand pe butonul {string}")
         public void submitFile(String numeButon){
-            metode.apasButonul(numeButon);
+            metode.pushButton(numeButon);
         }
         @And("Primesc confirmare ca fisierul s-a uploadat cu succes")
         public void confirmareUpload(){
             metode.confirmareUpload();
         }
 
+        @And ("Introduc termenul {string} in campul {string}")
+        public void cautareProdus(String produs, String camp) throws InterruptedException {
+                metode.cautProdus(produs,camp);
+        }
+        @And("Site-ul imi afiseaza rezultatele pentru {string}")
+        public void verificareCautareProdus(String produsCautat){
+                metode.searchItem(produsCautat);
+        }
+
+        @And("Produsele sunt de tipul {string}")
+        public void verificareProdusLista(String produs){
+                metode.searchItemList(produs);
+
+        }
 
 
 }
